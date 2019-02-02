@@ -110,3 +110,6 @@ venv.bak/
 *.gz
 *.tar
 *.zip
+
+# ignore idea
+.idea

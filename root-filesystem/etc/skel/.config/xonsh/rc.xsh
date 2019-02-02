@@ -1,4 +1,15 @@
-# ln -s ~/path/to/xonshit/rc.xsh ~/.config/xonsh/rc.xsh
+# There are a few ways to use this file, unfortunately. None is perfect.
+
+# The simplist way is to make a link to your local git version of `rc.local`.
+# benefits: as you change the local repo version, it's reflected immediately when you login next.
+# drawbacks: introduce an error and you can't login until you fix it
+# command: ln -s ~/path/to/xonsh-it.git/root-filesystem/etc/skel/.config/xonsh/rc.xsh ~/.config/xonsh/rc.xsh
+
+# To decouple the edited version of `rc.xsh` from your git repo version, copy it. Then you can test changes first.
+# cp ~/path/to/xonsh-it.git/root-filesystem/etc/skel/.config/xonsh/rc.xsh ~/.config/xonsh/rc.xsh
+
+# Eventually it might be useful to introduce ~/.config/xonsh/rc.d and generalize rc.xsh to source these files.
+# This is more flexible, but more complicated to control.
 
 import logging
 

@@ -1,18 +1,38 @@
+# https://poetry.eustace.io/docs/pyproject/
 [tool.poetry]
 name = "xonshit"
 version = "0.1.0"
-description = "xonsh community environment"
+description = "xonsh community environment similar to bash-it"
 authors = ["Mike Carifio <mike@carif.io>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://www.github.com/mcarifio/xonsh-it"
+# include
+# exclude
 
 [tool.poetry.dependencies]
 python = "^3.7"
-xonsh = "^0.8.8"
+# cleo?
+xonsh = "^0.8.9"
+poetry = "^0.12.11"
+prompt_toolkit = "^2.0"
+fire = "^0.1.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.1"
 hypothesis = "^4.4"
-black = "^18.9b0"
+# TODO mike@carif.io: Do I want to thrust my shell choice on others?
+# poetry add --dev --allow-prereleases black
+black = {version = "^18.3-alpha.0",allows-prereleases = true}
+
+[tool.poetry.scripts]
+# See xonshit.runner for the dispatch function, which will select the right function based on
+# it's name, e.g. `echo`. First two are for debugging and testing purposes
+
+# poetry run echo one two three
+echo = "xonshit.runner:dispatch"
+# poetry run say say it now
+say = "xonshit.runner:dispatch"
 
 [build-system]
 requires = ["poetry>=0.12"]

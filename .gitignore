@@ -113,3 +113,6 @@ venv.bak/
 
 # ignore idea
 .idea
+
+# ignore poetry intermediate result
+pip-wheel-metadata

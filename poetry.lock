@@ -7,7 +7,7 @@ python-versions = "*"
 version = "1.4.3"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Atomic file writes."
 name = "atomicwrites"
 optional = false
@@ -94,7 +94,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "7.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Cross-platform colored terminal text."
 marker = "sys_platform == \"win32\""
 name = "colorama"
@@ -126,7 +126,7 @@ six = ">=1.9"
 webencodings = "*"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A library for property based testing"
 name = "hypothesis"
 optional = false
@@ -168,7 +168,7 @@ python-versions = "*"
 version = "0.12.2"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "More routines for operating on iterables, beyond itertools"
 name = "more-itertools"
 optional = false
@@ -203,7 +203,7 @@ python-versions = "*"
 version = "1.5.0.1"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "plugin and hook calling mechanisms for python"
 name = "pluggy"
 optional = false
@@ -245,7 +245,7 @@ six = ">=1.9.0"
 wcwidth = "*"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
 name = "py"
 optional = false
@@ -280,7 +280,7 @@ version = "0.14.9"
 six = "*"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "pytest: simple powerful testing with Python"
 name = "pytest"
 optional = false
@@ -387,7 +387,7 @@ python-versions = "*"
 version = "0.8.9"
 
 [metadata]
-content-hash = "0c9a6aa66fb5c6f578fc75b58d5c622979293b2b449d20dcea445fef6eed1a89"
+content-hash = "fd488c318c70860f1322aa56d1053a8c1ef3e4f2c685485d4b0d11ac12aa8c10"
 python-versions = "^3.7"
 
 [metadata.hashes]

@@ -2,29 +2,52 @@
 
 import sys
 import fire
+import pytest
+import os.path
+import logging
 
-
-# You should never get here via poetry run because you must set up the entry point explicitly in pyproject.toml.
-def no_function(*argv):
-    print(f"{sys.argv[0]} not defined")
-    return 1
+# RUNNER_LOGLEVEL=DEBUG poetry run <something>
+# RUNNER_LOGLEVEL=DEBUG python -m xonshit.runner <something>
+logging.basicConfig(level=os.environ.get('RUNNER_LOGLEVEL', 'INFO').upper())
+logger = logging.getLogger(__name__)
+logger.debug(f'file {__file__}')
 
 def echo(*argv):
-    print("echo", argv)
+    # logger.debug(argv)
+    args = list(argv) if argv else list()
+    logger.info(args)
     return 0
 
 def say(*argv):
-    print("say", argv)
+    args = list(argv) if argv else list()
+    logger.info(args)
     return 0
+
+def testing(*argv):
+    logger.debug(f'testing {argv}')
+    pytest_args = list(argv) if argv else list()
+    here = os.path.dirname(__file__)
+    pytest_args.insert(0, f'--rootdir={here}')
+    pytest_args.insert(0, '--verbosity=4')
+    conf = here + os.sep + 'pytest.ini'
+    if os.path.exists(conf):
+        pytest_args.insert(0, conf)
+        pytest_args.insert(0, '-c')
+
+    logger.debug(pytest_args)
+    return pytest.main(pytest_args)
 
 # Add additional entry points here.
 
-# A "setup entry point" style function. It uses the first argument to dispatch to the right function above and consumes
-# that first argument.
-def dispatch():
-    name = sys.argv[0]
-    sys.exit(fire.Fire(dict(echo=echo, say=say).get(name, no_function)))
+
+# TODO mike@carif.io: describe the magic here
+def dispatch(*argv):
+    logger.debug(sys.argv)
+    logger.debug(f'dispatch {argv}')
+    entries = dict(echo=echo, say=say, testing=testing)
+    return fire.Fire(entries)
+
 
 if __name__ == '__main__':
-    # main(sys.argv)
-    dispatch()
+    # sys.exit(dispatch(sys.argv[1:]))
+    sys.exit(dispatch())

@@ -6,6 +6,11 @@ optional = false
 python-versions = "*"
 version = "1.4.3"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Atomic file writes."
@@ -14,6 +19,11 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "1.3.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Classes Without Boilerplate"
@@ -21,6 +31,11 @@ name = "attrs"
 optional = false
 python-versions = "*"
 version = "18.2.0"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "dev"
@@ -36,6 +51,11 @@ attrs = ">=17.4.0"
 click = ">=6.5"
 toml = ">=0.9.4"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "httplib2 caching for requests"
@@ -45,9 +65,13 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.12.5"
 
 [package.dependencies]
-lockfile = ">=0.9"
 msgpack = "*"
 requests = "*"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -57,6 +81,11 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.2.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -65,6 +94,11 @@ optional = false
 python-versions = "*"
 version = "2018.11.29"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Universal encoding detector for Python 2 and 3"
@@ -72,6 +106,11 @@ name = "chardet"
 optional = false
 python-versions = "*"
 version = "3.0.4"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -85,6 +124,11 @@ version = "0.6.8"
 pastel = ">=0.1.0,<0.2.0"
 pylev = ">=1.3,<2.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "dev"
 description = "Composable command line interface toolkit"
@@ -92,6 +136,11 @@ name = "click"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "7.0"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -101,6 +150,25 @@ name = "colorama"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.4.1"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
+[[package]]
+category = "main"
+description = "Distro - an OS platform information API"
+marker = "sys_platform == \"Linux\""
+name = "distro"
+optional = false
+python-versions = "*"
+version = "1.3.0"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -112,6 +180,11 @@ version = "0.1.3"
 
 [package.dependencies]
 six = "*"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -125,16 +198,26 @@ version = "1.0.1"
 six = ">=1.9"
 webencodings = "*"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "A library for property based testing"
 name = "hypothesis"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "4.4.5"
+version = "4.5.0"
 
 [package.dependencies]
 attrs = ">=16.0.0"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -143,6 +226,11 @@ name = "idna"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.8"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -158,14 +246,10 @@ pyrsistent = ">=0.14.0"
 setuptools = "*"
 six = ">=1.11.0"
 
-[[package]]
-category = "main"
-description = "Platform-independent file locking module"
-marker = "extra == \"filecache\""
-name = "lockfile"
-optional = false
-python-versions = "*"
-version = "0.12.2"
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -178,6 +262,11 @@ version = "5.0.0"
 [package.dependencies]
 six = ">=1.0.0,<2.0.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "MessagePack (de)serializer."
@@ -185,6 +274,24 @@ name = "msgpack"
 optional = false
 python-versions = "*"
 version = "0.6.1"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
+[[package]]
+category = "dev"
+description = "comprehensive password hashing framework supporting over 30 schemes"
+name = "passlib"
+optional = false
+python-versions = "*"
+version = "1.7.1"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -194,6 +301,11 @@ optional = false
 python-versions = "*"
 version = "0.1.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Query metadatdata from sdists / bdists / installed packages."
@@ -202,6 +314,11 @@ optional = false
 python-versions = "*"
 version = "1.5.0.1"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "plugin and hook calling mechanisms for python"
@@ -209,6 +326,11 @@ name = "pluggy"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.8.1"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -232,6 +354,11 @@ requests-toolbelt = ">=0.8.0,<0.9.0"
 shellingham = ">=1.1,<2.0"
 tomlkit = ">=0.5.1,<0.6.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Library for building powerful interactive command lines in Python"
@@ -244,6 +371,11 @@ version = "2.0.8"
 six = ">=1.9.0"
 wcwidth = "*"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
@@ -251,6 +383,11 @@ name = "py"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "1.7.0"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -260,6 +397,11 @@ optional = false
 python-versions = "*"
 version = "1.3.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Python parsing module"
@@ -267,6 +409,24 @@ name = "pyparsing"
 optional = false
 python-versions = "*"
 version = "2.3.1"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
+[[package]]
+category = "dev"
+description = "A minimal PyPI server for use with pip/easy_install."
+name = "pypiserver"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.2.7"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -278,6 +438,11 @@ version = "0.14.9"
 
 [package.dependencies]
 six = "*"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -297,6 +462,11 @@ py = ">=1.5.0"
 setuptools = "*"
 six = ">=1.10.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Python HTTP for Humans."
@@ -311,6 +481,11 @@ chardet = ">=3.0.2,<3.1.0"
 idna = ">=2.5,<2.9"
 urllib3 = ">=1.21.1,<1.25"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "A utility belt for advanced users of python-requests"
@@ -322,6 +497,11 @@ version = "0.8.0"
 [package.dependencies]
 requests = ">=2.0.1,<3.0.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Tool to Detect Surrounding Shell"
@@ -329,6 +509,11 @@ name = "shellingham"
 optional = false
 python-versions = ">=2.6,!=3.0,!=3.1,!=3.2,!=3.3"
 version = "1.2.8"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -338,6 +523,11 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*"
 version = "1.12.0"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "dev"
 description = "Python Library for Tom's Obvious, Minimal Language"
@@ -345,6 +535,11 @@ name = "toml"
 optional = false
 python-versions = "*"
 version = "0.10.0"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -354,6 +549,11 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.5.3"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -361,6 +561,11 @@ name = "urllib3"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4"
 version = "1.24.1"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -370,6 +575,11 @@ optional = false
 python-versions = "*"
 version = "0.1.7"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [[package]]
 category = "main"
 description = "Character encoding aliases for legacy web content"
@@ -377,6 +587,11 @@ name = "webencodings"
 optional = false
 python-versions = "*"
 version = "0.5.1"
+
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
 
 [[package]]
 category = "main"
@@ -386,8 +601,13 @@ optional = false
 python-versions = "*"
 version = "0.8.9"
 
+[package.source]
+reference = "xonshit"
+type = "legacy"
+url = "http://localhost:9090"
+
 [metadata]
-content-hash = "fd488c318c70860f1322aa56d1053a8c1ef3e4f2c685485d4b0d11ac12aa8c10"
+content-hash = "0cba4abc38f4837d7898e04567d7857a5278d41ea45ae57cfdff375c33d3bf91"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -402,14 +622,15 @@ chardet = ["84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae", "
 cleo = ["85a63076b72ca376fb06668be1fc7758dc16740b394783d5cc65200c4b32f71b", "9b7f79f1aa470a025c0d28c76aa225ee9e65028d32f80032e871aa3500df61b8"]
 click = ["2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13", "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"]
 colorama = ["05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d", "f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"]
+distro = ["224041cef9600e72d19ae41ba006e71c05c4dc802516da715d7fda55ba3d8742", "6ec8e539cf412830e5ccf521aecf879f2c7fcf60ce446e33cd16eef1ed8a0158"]
 fire = ["c299d16064ff81cbb649b65988300d4a28b71ecfb789d1fb74d99ea98ae4d2eb"]
 html5lib = ["20b159aa3badc9d5ee8f5c647e5efd02ed2a66ab8d354930bd9ff139fc1dc0a3", "66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736"]
-hypothesis = ["293214243ec67a3c96aa0efccb9008ff3e281a0a2df5137c991f775797b1eacd", "71670007763089f05e54e953f4a9d32cd4f786cc1debcaba59f233c3f9f9f60f", "fa4f422aedd61abb4d25cc3485f4e91b1f792d1c320225c93559f706449c6044"]
+hypothesis = ["102007f511c9dc4a94b27f714ac9c0d5f93dd7102a02390ff9b8c545b3d7fd0e", "2187928e96bab144b89c6c19d08d61dc247bb1623e58e31bec1da7f71381fa9e", "fba7d76b5181aeafc4abb2361ac7d87080e92ef6aafdf1b5d4692f937bc280e4"]
 idna = ["c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407", "ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"]
 jsonschema = ["683fe7ed58763ea0be572de5aad47cd3cc1297640916f9a8ccd222b287da7d2f", "b42d7a292addb57370e6260bcbadb77e00a899fe6ec998c453f45893c41c658b"]
-lockfile = ["6aed02de03cba24efabcd600b30540140634fc06cfa603822d508d5361e9f799", "6c3cb24f344923d30b2785d5ad75182c8ea7ac1b6171b08657258ec7429d50fa"]
 more-itertools = ["38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4", "c0a5785b1109a6bd7fac76d6837fd1feca158e54e521ccd2ae8bfe393cc9d4fc", "fe7a7cae1ccb57d33952113ff4fa1bc5f879963600ed74918f1236e212ee50b9"]
 msgpack = ["26cb40116111c232bc235ce131cc3b4e76549088cb154e66a2eb8ff6fcc907ec", "300fd3f2c664a3bf473d6a952f843b4a71454f4c592ed7e74a36b205c1782d28", "3129c355342853007de4a2a86e75eab966119733eb15748819b6554363d4e85c", "31f6d645ee5a97d59d3263fab9e6be76f69fa131cddc0d94091a3c8aca30d67a", "3ce7ef7ee2546c3903ca8c934d09250531b80c6127e6478781ae31ed835aac4c", "4008c72f5ef2b7936447dcb83db41d97e9791c83221be13d5e19db0796df1972", "62bd8e43d204580308d477a157b78d3fee2fb4c15d32578108dc5d89866036c8", "70cebfe08fb32f83051971264466eadf183101e335d8107b80002e632f425511", "72cb7cf85e9df5251abd7b61a1af1fb77add15f40fa7328e924a9c0b6bc7a533", "7c55649965c35eb32c499d17dadfb8f53358b961582846e1bc06f66b9bccc556", "86b963a5de11336ec26bc4f839327673c9796b398b9f1fe6bb6150c2a5d00f0f", "8c73c9bcdfb526247c5e4f4f6cf581b9bb86b388df82cfcaffde0a6e7bf3b43a", "8e68c76c6aff4849089962d25346d6784d38e02baa23ffa513cf46be72e3a540", "97ac6b867a8f63debc64f44efdc695109d541ecc361ee2dce2c8884ab37360a1", "9d4f546af72aa001241d74a79caec278bcc007b4bcde4099994732e98012c858", "a28e69fe5468c9f5251c7e4e7232286d71b7dfadc74f312006ebe984433e9746", "fd509d4aa95404ce8d86b4e32ce66d5d706fd6646c205e1c2a715d87078683a2"]
+passlib = ["3d948f64138c25633613f303bcc471126eae67c04d5e3f6b7b8ce6242f8653e0", "43526aea08fa32c6b6dbbbe9963c4c767285b78147b7437597f992812f69d280"]
 pastel = ["3108af417ec0fa6d0a620e676ec4f02c839ca13e10611586e5d2174b46aa0bc3", "d1fee8079534f99f1805a044fef946d23eee6d6a7cd34292c30e6c16be9a80b9"]
 pkginfo = ["7424f2c8511c186cd5424bbf31045b77435b37a8d604990b79d4e70d741148bb", "a6d9e40ca61ad3ebd0b72fbadd4fba16e4c0e4df0428c041e01e06eb6ee71f32"]
 pluggy = ["8ddc32f03971bfdf900a81961a48ccf2fb677cf7715108f85295c67405798616", "980710797ff6a041e9a73a5787804f848996ecaa6f8a1b1e08224a5894f2074a"]
@@ -418,13 +639,14 @@ prompt-toolkit = ["88002cc618cacfda8760c4539e76c3b3f148ecdb7035a3d422c7ecdc90c2a
 py = ["bf92637198836372b520efcba9e020c330123be8ce527e535d185ed4b6f45694", "e76826342cefe3c3d5f7e8ee4316b80d1dd8a300781612ddbc765c17ba25a6c6"]
 pylev = ["063910098161199b81e453025653ec53556c1be7165a9b7c50be2f4d57eae1c3", "1d29a87beb45ebe1e821e7a3b10da2b6b2f4c79b43f482c2df1a1f748a6e114e"]
 pyparsing = ["66c9268862641abcac4a96ba74506e594c884e3f57690a696d21ad8210ed667a", "f6c5ef0d7480ad048c054c37632c67fca55299990fff127850181659eea33fc3"]
+pypiserver = ["647bea706b0148415b500aaffea6ab06dd15fa286e534b3f891b04e7987d031f", "ae790992bfd69daf5f6bb682d9a15470f3ee1e8835ac6de7784c438446edea95"]
 pyrsistent = ["5a3827d57ad3e46820e5ee4ed5b9e0ee7bc4686df6634a7368bc1863a5c48a77"]
 pytest = ["65aeaa77ae87c7fc95de56285282546cfa9c886dc8e5dc78313db1c25e21bc07", "6ac6d467d9f053e95aaacd79f831dbecfe730f419c6c7022cb316b365cd9199d"]
 requests = ["502a824f31acdacb3a35b6690b5fbf0bc41d63a24a45c4004352b0242707598e", "7bf2a778576d825600030a110f3c0e3e8edc51dfaafe1c146e39a2027784957b"]
 requests-toolbelt = ["42c9c170abc2cacb78b8ab23ac957945c7716249206f90874651971a4acff237", "f6a531936c6fa4c6cfce1b9c10d5c4f498d16528d2a54a22ca00011205a187b5"]
 shellingham = ["56e6c7f043661a82b276c241c8e62da62cdf710437164cdef75b3f3ac50fb384", "f24a5a01e6c81d04e252fa2ebaa37710af27e7ec9b54692bcddb9303f899101b"]
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
-toml = ["229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c", "235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e", "f1db651f9657708513243e61e6cc67d101a39bad662eaa9b5546f789338e07a3"]
+toml = ["229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c", "235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e"]
 tomlkit = ["d6506342615d051bc961f70bfcfa3d29b6616cc08a3ddfd4bc24196f16fd4ec2", "f077456d35303e7908cc233b340f71e0bec96f63429997f38ca9272b7d64029e"]
 urllib3 = ["61bf29cada3fc2fbefad4fdf059ea4bd1b4a86d2b6d15e1c7c0b582b9752fe39", "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"]
 wcwidth = ["3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e", "f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c"]

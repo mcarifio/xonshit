@@ -1,12 +1,13 @@
 # https://poetry.eustace.io/docs/pyproject/
 [tool.poetry]
 name = "xonshit"
-version = "0.1.0"
+version = "0.1.1"
 description = "xonsh community environment similar to bash-it"
 authors = ["Mike Carifio <mike@carif.io>"]
 license = "MIT"
 readme = "xonshit/README.md"
 homepage = "https://www.github.com/mcarifio/xonsh-it"
+vcs = "git"
 # include
 # exclude
 
@@ -19,11 +20,23 @@ prompt_toolkit = "^2.0"
 fire = "^0.1.3"
 pytest = "^4.1"
 hypothesis = "^4.4"
+distro = {version = "^1.3",platform = "Linux"}
 
 [tool.poetry.dev-dependencies]
-# TODO mike@carif.io: Do I want to thrust my shell choice on others?
 # poetry add --dev --allow-prereleases black
+# https://black.readthedocs.io/en/stable/
 black = {version = "^18.3-alpha.0",allows-prereleases = true}
+
+# poetry add --dev pypiserver
+# https://pypi.org/project/pypiserver/#quickstart-installation-and-usage
+pypiserver = "^1.2"
+passlib = "^1.7"
+
+
+# poetry add --dev --optional xonsh
+# https://xon.sh/index.html
+xonsh = {version = "^0.8.9",optional = true}
+
 
 [tool.poetry.scripts]
 # See xonshit.runner for the dispatch function, which will select the right function based on
@@ -34,6 +47,14 @@ echo = "xonshit.runner:echo"
 # poetry run say say it now
 say = "xonshit.runner:say"
 testing = "xonshit.runner:testing"
+
+
+[[tool.poetry.source]]
+name = "xonshit"
+url = "http://localhost:9090/"
+username = "xonshit"
+password = "xonshit"
+
 
 [build-system]
 requires = ["poetry>=0.12"]

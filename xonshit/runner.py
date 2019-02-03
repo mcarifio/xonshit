@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+f"""
+
+This module ({__name__}) is consumed before deployment by poetry via `poetry run <something>` and after deployment
+via `python -m {__name__} <something>` for example `python -m {__name__} echo here i am` |> `here i am`.
+In particular `python -m {__name__} testing` runs the pytests deployed with the module.
+
+You can also change the logging level with the environment variable `RUNNER_LOGLEVEL`, for example
+```bash
+env RUNNER_LOGLEVEL=DEBUG poetry run <something>  ## when developing
+env RUNNER_LOGLEVEL=DEBUG python -m xonshit.runner <something>  ## after deployment
+```
+
+"""
+
 
 import sys
 import fire
@@ -6,8 +20,6 @@ import pytest
 import os.path
 import logging
 
-# RUNNER_LOGLEVEL=DEBUG poetry run <something>
-# RUNNER_LOGLEVEL=DEBUG python -m xonshit.runner <something>
 logging.basicConfig(level=os.environ.get('RUNNER_LOGLEVEL', 'INFO').upper())
 logger = logging.getLogger(__name__)
 logger.debug(f'file {__file__}')

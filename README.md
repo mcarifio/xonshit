@@ -252,15 +252,17 @@ Publishing xonshit (0.1.1) to xonshit
 xonshit (0.1.1)  - 0.1.1
 ```
 
-Note that a local pypiserver isn't necessary. You can install `xonshit` directly from github with the "module name" `git+ssh://git@github.com/mcarifio/xonshit.git` (this borders on magical) if you want to confirm that you haven't "broken the build".
-To do this, create a sacrificial virtualenv using the [venv]() module:
+Note that a local pypiserver isn't necessary. You can install `xonshit` directly from github with the "module name" `git+ssh://git@github.com/mcarifio/xonshit.git` (this borders on magical). 
+This is a useful way to confirm that your last git commit (or any commit for that matter) can be installed. To do this, create a sacrificial virtualenv using the 
+[venv](https://docs.python.org/3/library/venv.html) module:
 
 ```bash
 $ mkdir /tmp/venv                                                                                                                                                                                                            
 $ python -m venv /tmp/venv                                                                                                                                                                                                   
-$ cd /tmp/venv && source bin/activiate
+$ pushd /tmp/venv  ## simplifies inspecting the installed module xonshit
+$ source bin/activiate  
 
-$ pip install -U pip                                                                                                                                                                                                                      
+(venv) $ pip install -U pip  ## the latest pip groks pyproject.toml. very useful.                                                                                                                                                                                                                      
 Collecting pip
   Using cached https://files.pythonhosted.org/packages/46/dc/7fd5df840efb3e56c8b4f768793a237ec4ee59891959d6a215d63f727023/pip-19.0.1-py2.py3-none-any.whl
 Installing collected packages: pip
@@ -354,5 +356,18 @@ Installing collected packages: six, fire, py, pluggy, more-itertools, atomicwrit
   Running setup.py install for cachecontrol ... done
 Successfully installed atomicwrites-1.3.0 attrs-18.2.0 cachecontrol-0.12.5 cachy-0.2.0 certifi-2018.11.29 chardet-3.0.4 cleo-0.6.8 fire-0.1.3 html5lib-1.0.1 hypothesis-4.5.0 idna-2.8 jsonschema-3.0.0b3 lockfile-0.12.2 more-itertools-5.0.0 msgpack-0.6.1 pastel-0.1.0 pkginfo-1.5.0.1 pluggy-0.8.1 poetry-0.12.11 prompt-toolkit-2.0.8 py-1.7.0 pylev-1.3.0 pyparsing-2.3.1 pyrsistent-0.14.9 pytest-4.2.0 requests-2.21.0 requests-toolbelt-0.8.0 shellingham-1.2.8 six-1.12.0 tomlkit-0.5.3 urllib3-1.24.1 wcwidth-0.1.7 webencodings-0.5.1 xonsh-0.8.9 xonshit-0.1.1
 
+$ python -m xonshit.runner testing                                                                                                                                                                    
+=========================================================================================================================== test session starts ============================================================================================================================
+platform linux -- Python 3.7.0, pytest-4.2.0, py-1.7.0, pluggy-0.8.1 -- /tmp/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/tmp/venv/lib/python3.7/site-packages/xonshit/.hypothesis/examples')
+rootdir: /tmp/venv/lib/python3.7/site-packages/xonshit, inifile: /tmp/venv/lib/python3.7/site-packages/xonshit/pytest.ini
+plugins: xonsh-0.8.9, hypothesis-4.5.0
+collected 1 item                                                                                                                                                                                                                                                           
 
+testing/test_runner.py::runner_test PASSED                                                                                                                                                                                                                           [100%]
+
+========================================================================================================================= 1 passed in 0.01 seconds =========================================================================================================================
+0
 ``` 
+

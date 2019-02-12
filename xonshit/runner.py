@@ -115,10 +115,10 @@ def pypiserver(*argv):
     return 1
 
 
-def tomlck(*argv):
+def tomlck(pyproject_toml=None):
     """
-    tomlck.poetry.usage: [RUNNER_LOGLEVEL=debug] poetry run tomlck
-    tomlck.python.usage: [RUNNER_LOGLEVEL=debug] python -m xonshit.runner tomlck
+    tomlck.poetry.usage: [RUNNER_LOGLEVEL=debug] poetry run tomlck [--pyproject_toml=path/to/pyproject.toml]
+    tomlck.python.usage: [RUNNER_LOGLEVEL=debug] python -m xonshit.runner tomlck [--pyproject_toml=path/to/pyproject.toml]
     tomlck.python.usage.help: [RUNNER_LOGLEVEL=debug] python -m xonshit.runner tomlck --help
 
     Checks the pyproject.toml file for well-formedness. For installed packages, pyproject.toml is in the pockage root.
@@ -128,7 +128,7 @@ def tomlck(*argv):
     me = sys._getframe(0).f_code.co_name
     here = os.path.dirname(__file__)
     # Note: in development mode, requires a symbolic link from pyproject.toml to xonshit/pyproject.toml
-    pyproject_toml = argv[1] if len(argv) > 0 else os.path.join(here, "pyproject.toml")
+    pyproject_toml = pyproject_toml or os.path.join(here, "pyproject.toml")
     logger.debug(f'in {me} reading {pyproject_toml}')
     if not os.path.exists(pyproject_toml):
         raise FileNotFoundError(pyproject_toml)

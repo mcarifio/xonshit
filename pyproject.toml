@@ -20,6 +20,7 @@ fire = "^0.1.3"
 pytest = "^4.1"
 hypothesis = "^4.4"
 distro = {version = "^1.3",platform = "Linux"}
+attrdict = "^2.0"
 
 [tool.poetry.dev-dependencies]
 # poetry add --dev --allow-prereleases black
@@ -45,18 +46,11 @@ xonsh = {version = "^0.8.9",optional = true}
 
 # All scripts will follow the pattern below for each "entry point"
 echo = "xonshit.runner:echo"
-"echo.poetry.usage" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:echo one two three"
-"echo.poetry.usage.help" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:echo --help"
-"echo.python.usage" = "[RUNNER_LOGLEVEL=debug] python -m xonshit.runner echo one two three"
-
 # poetry run say say it now
 # say just demonstrates a different entry point
 say = "xonshit.runner:say"
 
 testing = "xonshit.runner:testing"
-"testing.poetry.usage" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:testing [--pytestflag[=value]]*"
-"testing.poetry.usage.help" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:testing --help"
-"testing.python.usage" = "[RUNNER_LOGLEVEL=debug] python -m xonshit.runner testing [--pytestflag[=value]]*"
 
 # To use a local pypiserver, swithch the definition next and uncomment out [tool.poetry.source] array item.
 # pypiserver = "pyproject.bin.pypiserver:run"
@@ -65,8 +59,22 @@ pypiserver = "xonshit.runner:pypiserver"
 # Note that the toml checker for pyproject.toml assumes pyproject.toml is in xonshit/xonshit.
 # Git should create a symlink for you on cloning.
 tomlck = "xonshit.runner:tomlck"
+
+# Describe the scripts above for some (eventual) cool tool to help invoke poetry scripts
+[help.tool.poetry.scripts]
+"echo.poetry.usage" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:echo one two three"
+"echo.poetry.usage.help" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:echo --help"
+"echo.python.usage" = "[RUNNER_LOGLEVEL=debug] python -m xonshit.runner echo one two three"
+
+"testing.poetry.usage" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:testing [--pytestflag[=value]]*"
+"testing.poetry.usage.help" = "[RUNNER_LOGLEVEL=debug] poetry run xonshit.runner:testing --help"
+"testing.python.usage" = "[RUNNER_LOGLEVEL=debug] python -m xonshit.runner testing [--pytestflag[=value]]*"
+
 "tomlck.poetry.usage" = "[RUNNER_LOGLEVEL=debug] poetry run tomlck [--pyproject_toml=path/to/pyproject.toml]"
-"toml.python.usage" = "[RUNNER_LOGLEVEL=debug] python -m xonshit.runner tomlck [--pyproject_toml=path/to/pyproject.toml]"
+"toml.python.usage" = {env="RUNNER_LOGLEVEL=debug", invoke="python -m xonshit.runner", command="tomlck [--pyproject_toml=path/to/pyproject.toml]"}
+
+
+
 
 #[[tool.poetry.source]]
 #name = "xonshit"
@@ -80,13 +88,13 @@ tomlck = "xonshit.runner:tomlck"
 #verbose = 1
 #overwrite = 1
 
+[tool.project]
+vcs = "ssh://git@github.com/mcarifio/xonshit.git"
+direct = "git+ssh://git@github.com/mcarifio/xonshit.git" # @sometag#egg=SomeDependency"
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 
 
 # Custom project meta data, don't know how I'll use it yet
-[tool.project]
-vcs = "ssh://git@github.com/mcarifio/xonshit.git"
-direct = "git+ssh://git@github.com/mcarifio/xonshit.git" # @sometag#egg=SomeDependency"
-

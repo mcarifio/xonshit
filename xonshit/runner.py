@@ -17,6 +17,7 @@ import pdb
 import sys
 import os
 import os.path
+import attrdict
 import fire
 import pytest
 import logging
@@ -133,8 +134,8 @@ def tomlck(pyproject_toml=None):
     if not os.path.exists(pyproject_toml):
         raise FileNotFoundError(pyproject_toml)
     try:
-        metadata = toml.load(pyproject_toml)
-        logger.info(f"'{pyproject_toml}' loaded successfully, describes project named '{metadata['tool']['poetry']['name']}'")
+        metadata = attrdict.AttrDict(toml.load(pyproject_toml))
+        logger.info(f"'{pyproject_toml}' loaded successfully, describes project named '{metadata.tool.poetry.name}'")
         return 0
     except IOError as ioe:
         logger.error(ioe.message)

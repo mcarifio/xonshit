@@ -13,7 +13,7 @@ include = "doc"
 [tool.poetry.dependencies]
 python = "^3.7"
 # cleo?
-xonsh = "^0.8.9"
+fusepy = "^3.0.1"
 poetry = "^0.12.11"
 prompt_toolkit = "^2.0"
 fire = "^0.1.3"
@@ -31,35 +31,44 @@ black = {version = "^18.3-alpha.0",allows-prereleases = true}
 pypiserver = "^1.2"
 passlib = "^1.7"
 
-
 # poetry add --dev --optional xonsh
 # https://xon.sh/index.html
 xonsh = {version = "^0.8.9",optional = true}
+
+
+
 
 
 [tool.poetry.scripts]
 # See xonshit.runner for the dispatch function, which will select the right function based on
 # it's name, e.g. `echo`. First two are for debugging and tests purposes
 
-# poetry run echo one two three
 echo = "xonshit.runner:echo"
+"echo.poetry.usage" = "poetry run xonshit.runner:echo one two three"
+"echo.python.usage" = "python -m xonshit.runner echo one two three"
+
 # poetry run say say it now
 say = "xonshit.runner:say"
+
 testing = "xonshit.runner:testing"
 
-pypiserver = "project.bin.pypiserver:run"
+# To use a local pypiserver, swithch the definition next and uncomment out [tool.poetry.source] array item.
+# pypiserver = "pyproject.bin.pypiserver:run"
+pypiserver = "xonshit.runner:pypiserver"
 
-[[tool.poetry.source]]
-name = "xonshit"
-url = "http://localhost:9090"
-username = "xonshit"
-password = "xonshit"
+tomlck = "xonshit.runner:tomlck"
 
-# custom values
-directory = "project/build/resources/pypiserver/packages"
-htpasswd = "project/build/resources/pypiserver/htpasswd.txt"
-verbose = 1
-overwrite = 1
+#[[tool.poetry.source]]
+#name = "xonshit"
+#url = "http://localhost:9090"
+#username = "xonshit"
+#password = "xonshit"
+
+# custom values, unused
+#directory = "project/build/resources/pypiserver/packages"
+#htpasswd = "project/build/resources/pypiserver/htpasswd.txt"
+#verbose = 1
+#overwrite = 1
 
 [build-system]
 requires = ["poetry>=0.12"]
